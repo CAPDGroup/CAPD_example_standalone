@@ -1,0 +1,3 @@
+[submodule "src/CAPD"]
+	path = src/CAPD
+	url = https://github.com/CAPDGroup/CAPD
