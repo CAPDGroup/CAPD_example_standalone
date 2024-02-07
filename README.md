@@ -1,11 +1,16 @@
 # CAPD example application with built-in library component
-## Overview
-An example application demonstrating how to build cmake application together with CAPD library.
+
+An example CAPD-based project that is built together with CAPD library. This project is a modification of https://github.com/CAPDGroup/CAPD.example.1
 
 ## Getting started
-1. Clone the repository:
 
-       git clone https://github.com/CAPDGroup/CAPD.example.2
+In order to perform the build it is necessary to have `git`, `cmake` and `make` tools installed as well as C++ compiler with C++17 support.
+
+In order to set up and run the example it is necessary to perform the following commands.
+
+1. Clone this repository:
+
+        git clone https://github.com/CAPDGroup/CAPD.example.2
 
 2. Perform build (script `build.sh` performs submodule update, repository configuration and the build itself):
 
@@ -24,4 +29,3 @@ In order to repeat the build (e.g. after introducing changes in the source code)
     cd build
     make
 
-The build can be made faster by replacing `make` command with `make -j <n>`, where `<n>` is the number of parallel jobs, e.g. `make -j 4`.
