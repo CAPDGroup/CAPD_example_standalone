@@ -1,5 +1,6 @@
 #include <iostream>
 #include "capd/capdlib.h"
+#include "test.h"
 
 using namespace capd;
 
@@ -9,6 +10,9 @@ int main()
     
     try
     {
+		std::cout << "f = " << f() << std::endl;
+		
+		
         // Defining vector field, ODE solver and Poincare map for the Rossler system.
         IMap vf("par:a,b;var:x,y,z;fun:-(y+z),x+b*y,b+z*(x-a);");
         vf.setParameter("a", interval(57)/interval(10));
