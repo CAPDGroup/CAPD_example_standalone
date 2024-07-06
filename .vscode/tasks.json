@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "configure (ninja)",
+            "type": "shell",
+            "command": "cmake -G \"Ninja\" -B build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build (ninja)",
+            "type": "shell",
+            "command": "ninja -C build -j 4",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "configure (makefile)",
+            "type": "shell",
+            "command": "cmake -G \"Unix Makefiles\" -B build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build (makefile)",
+            "type": "shell",
+            "command": "ninja -C build -j 4",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run without debug",
+            "type": "shell",
+            "command": "build/capd_example",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
