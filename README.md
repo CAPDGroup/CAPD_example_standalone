@@ -1,6 +1,6 @@
 # CAPD example application with built-in library component
 
-An example CAPD-based project that is built together with CAPD library. This project is a modification of https://github.com/CAPDGroup/CAPD.example.1
+An example CAPD-based project that is built together with CAPD library.
 
 ## Getting started
 
