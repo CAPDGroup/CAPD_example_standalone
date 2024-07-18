@@ -10,22 +10,24 @@ In order to set up and run the example it is necessary to perform the following 
 
 1. Clone this repository:
 
-        git clone https://github.com/CAPDGroup/CAPD.example.2
+        git clone https://github.com/CAPDGroup/CAPD_example_standalone
 
-2. Perform build (script `build.sh` performs submodule update, repository configuration and the build itself):
+1. Perform the build:
 
-        cd CAPD.example.2
-        ./build.sh
-
-3. Run the application:
-
+        cd CAPD_example_standalone
+        mkdir build
         cd build
+        cmake ..
+        make
+
+1. Run the application:
+
         ./capd_example
 
 The commands above will build an example executable together with CAPD library.
 
-In order to repeat the build (e.g. after introducing changes in the source code), `build.sh` should not be called. It is sufficient to do:
+In order to repeat the build (e.g. after introducing changes in the source code), it is sufficient to call:
 
-    cd build
     make
 
+from the `build` directory.
