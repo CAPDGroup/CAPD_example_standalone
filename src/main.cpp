@@ -19,21 +19,20 @@ void vector_field_builder(Node, Node in[], int, Node out[], int, Node param[], i
 
 int main()
 {
-    DMap vector_field(vector_field_builder, 2, 2, 1);
+    IMap vector_field(vector_field_builder, 2, 2, 1);
     vector_field.setParameter(0, 1e-7);
 
-    DVector arg = { 0.1, 0 };
+    IVector arg = { 0.1, 0 };
 
     const int order = 20;
 
-    DOdeSolver solver(vector_field, order);
-    DCoordinateSection section(2, 1, 1.0); // coordinate section y == 1.0
-    DPoincareMap poincare_map(solver, section, poincare::MinusPlus);
+    IOdeSolver solver(vector_field, order);
+    ICoordinateSection section(2, 1, 1.0); // coordinate section y == 1.0
+    IPoincareMap poincare_map(solver, section, poincare::MinusPlus);
 
-    poincare_map.setMaxReturnTime(1e8);
-
-    double return_time {};
-    DVector img = poincare_map(arg, return_time);
+    interval return_time {};
+    C1Rect2Set set(arg);
+    IVector img = poincare_map(set, return_time);
 
     std::cout.precision(17);
     std::cout << img << '\n';
