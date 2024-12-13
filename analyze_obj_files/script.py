@@ -37,11 +37,12 @@ if __name__ == '__main__':
 
     paths = find_object_files('.')
 
+    # Exclude cxsc and filib object files
     paths = [p for p in paths if p.find('cxsc') == -1 and p.find('filib') == -1]
 
     total_dict = {}
 
-    paths = [path for path in paths if len(path) > 0 and path.find('main.cpp.o') == -1]
+    paths = [path for path in paths if len(path) > 0]
     for path in paths:
 
         print(path)
@@ -54,15 +55,15 @@ if __name__ == '__main__':
     total_list = list(total_dict.items())
     total_list.sort(key=lambda item : item[1])
 
-    # for item in total_list:
-    #    print(f'{item[1]} {item[0]}')
-
     histogram_dict = {}
     for func in total_list:
         repetitions = func[1]
         histogram_dict[repetitions] = histogram_dict.get(repetitions, 0) + 1
     
-    print(histogram_dict)
-    print(sum([h[0] * h[1] for h in histogram_dict.items()]))
+    for key, value in histogram_dict.items():
+        print(f'{value} function with {key} excessive instantiations.')
+
+    total_number_of_excessive_instantiations = sum([h[0] * h[1] for h in histogram_dict.items()])
+    print(f'Total number of excessive instantiations: {total_number_of_excessive_instantiations}')
 
 
