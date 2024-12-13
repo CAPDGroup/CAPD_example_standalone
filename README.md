@@ -15,6 +15,7 @@ In order to set up and run the example it is necessary to perform the following 
 1. Perform the build:
 
         cd CAPD_example_standalone
+        git submodule update --init --recursive
         mkdir build
         cd build
         cmake ..
